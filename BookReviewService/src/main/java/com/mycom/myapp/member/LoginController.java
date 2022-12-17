@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.mycom.myapp.book.BookVO;
+
 @Controller
 @RequestMapping(value = "/login")
 public class LoginController {
@@ -37,6 +39,20 @@ public class LoginController {
 			}
 		return returnURL;
 		}
+	
+	@RequestMapping(value = "/adduser", method = RequestMethod.GET)
+	public String addUserPost() {
+		return "adduserform";
+	}
+	
+	@RequestMapping(value = "/adduserok", method = RequestMethod.POST)
+	public String addUser(UserVO vo) {
+		if(service.insertUser(vo) == 0)
+			System.out.println("사용자 정보 추가 실패");
+		else
+			System.out.println("사용자 정보 추가 성공");
+		return "redirect:/login/login";
+	}
 	
 	// 로그아웃하는부분
 	@RequestMapping(value="/logout")

@@ -3,8 +3,22 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Book Review Service</title>
 <style>
+.box1{
+      width:50%;
+      border: 3px solid #BAE39F;
+      padding:20px 20px;
+      margin:auto;
+      text-align: center;
+      background-color: #BAE39F;
+    }
+body{
+      background-color: #E2F6D4;
+      color:black;
+      font-size:20px;
+      text-align: center;
+    }
 img, label {
 	display: inline-block;
 }
@@ -21,8 +35,9 @@ button {
 </style>
 </head>
 <body>
+	<div class="box1">독서 경험을 공유하세요</div>
 	<div style='width:100%; text-align:center; padding-top:100px'>
-	<img src ='../img/profile2.png' height="250">
+	<img src ='../img/libre.jpg' height="250">
 	<form method ="post" action="loginOk">
 	<div>
 		<label>User ID: </label>
@@ -35,6 +50,7 @@ button {
 	<button type='submit'>login
 	</button>
 	</form>
+	<a href="adduser">회원 가입</a>
 	</div>
 </body>
 </html>
