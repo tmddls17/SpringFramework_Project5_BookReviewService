@@ -9,6 +9,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>free board</title>
 <style>
+body {
+	background-color: #E2F6D4;
+	color: black;
+	font-size: 20px;
+	text-align: center;
+}
+
 #list {
 	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 	border-collapse: collapse;
@@ -54,14 +61,15 @@
 
 	<table id="list" width="90%">
 		<tr>
-			<th>ID</th>
-			<th>Category</th>
-			<th>Title</th>
-			<th>Writer</th>
-			<th>Content</th>
-			<th>Regdate</th>
-			<th>Edit</th>
-			<th>Delete</th>
+			<th>번호</th>
+			<th>장르</th>
+			<th>제목</th>
+			<th>작성자</th>
+			<th>평가</th>
+			<th>작성일</th>
+			<th>수정</th>
+			<th>자세히보기</th>
+			<th>삭제</th>
 		</tr>
 
 		<c:forEach items="${list}" var="u">
@@ -70,7 +78,7 @@
 				<td>${u.category}</td>
 				<td>${u.title}</td>
 				<td>${u.writer}</td>
-				<td>${u.content}</td>
+				<td>${u.score}</td>
 				<td>${u.regdate}</td>
 				<td><a href="editform/${u.seq}">Edit</a></td>
 				<td><a href="javascript:delete_ok('${u.seq}')">Delete</a></td>
